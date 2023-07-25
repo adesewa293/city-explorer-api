@@ -1,8 +1,8 @@
 const express = require("express");
 const weatherData = require("./data/weather.json");
-const cors = require('cors')
+const cors = require("cors");
 
-require('dotenv').config()
+require("dotenv").config();
 
 const app = express();
 
@@ -34,7 +34,7 @@ app.get("/weather", (req, res) => {
     });
     res.send(result);
   } else {
-    res.send({
+    res.status(404).send({
       message: "City not found",
     });
   }
