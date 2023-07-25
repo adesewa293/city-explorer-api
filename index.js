@@ -35,7 +35,7 @@ app.get("/weather", (req, res) => {
     res.send(result);
   } else {
     res.status(404).send({
-      message: "City not found",
+      error: `City => ${searchQuery}, ${lat}, ${lon} not found`,
     });
   }
 });
