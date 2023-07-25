@@ -21,7 +21,7 @@ app.get("/weather", (req, res) => {
   const searchQuery = req.query.searchQuery;
   const foundCity = weatherData.find((city) => {
     return (
-      city.city_name.toLocaleLowerCase() === searchQuery.toLocaleLowerCase() &&
+      city.city_name === searchQuery &&
       city.lat.toString() === lat &&
       city.lon.toString() === lon
     );
