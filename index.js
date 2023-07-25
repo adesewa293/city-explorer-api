@@ -1,8 +1,10 @@
 const express = require("express");
 const weatherData = require("./data/weather.json");
+require('dotenv').config()
 
 const app = express();
-const port = 4000;
+
+const port = process.env.PORT || 4000;
 
 function Forecast(date, description) {
   this.date = date;
